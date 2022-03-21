@@ -1,0 +1,8 @@
+What is the role of SRE
+Benefits of Cloud Computing
+AWS
+AWS Global Infrastructure
+Regions vs Availability Zones
+What are the four Pillars of Cloud Computing
+What is CDN
+On PREM VS Hybrid - On PREM VS Public Cloud

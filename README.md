@@ -6,7 +6,7 @@
 - Create Github Repo to push the markdown Doc
 - Amazon Web Services (AWS)
 
-### Benefits of Cloyd Computing
+Benefits of Cloyd Computing
 - Ease of Use
   - Comes with AWS Tools
   - Able to migrate from other Servers to the Service
@@ -23,3 +23,42 @@
   - Only pay for what you use (Computing, Storage and Other Resources)
   - No Long Term Contracts or Up-Front Commitments
   - Migration and Deployments are eased by the Tools, therefore costs cheaper
+
+### What is the role of SRE
+- Automate Tasks as much as Possible
+- Monitor the System, Predict possible points of Failure that can happen in the future in the System
+- Fix the Issues that pop up immediately
+### Benefits of Cloud Computing
+- Cost Savings, Flexibility, Strategic Value
+### AWS
+- Amazon Warehouse Storage
+### AWS Global Infrastructure
+- Global & Flexible
+- Highly Available & Scalable
+- Secure and Highly Performance
+### Regions vs Availability Zones
+- Regions are multiple isolated locations within each Region (Paris could contain 5 Nodes spread out in the City)
+- Regions consist of multiple Availability Zone
+- Allows multiple instances where each Instance can be in different Zones to allow for High Uptime
+### What are the four Pillars of Cloud Computing
+- Ease of use
+- Flexibility
+- Robustness
+- Cost effective
+### What is CDN
+- Content Delivery Network
+- Deploying it to a Server in England
+- The Service will also deploy a copy to another Server in a different region to ensure that it has Global Access
+### On PREM VS Hybrid - On PREM VS Public Cloud
+- Private Cloud
+  - Cloud Computing that is solely dedicated to your organizatin
+  - Dedicated and Secure
+  - Efficient
+- Public Cloud
+  - Cloud Computing that is shared across Organizations
+  - No Maintanence Costs
+  - Agile for Innovation
+- Hybrid
+  - Any environment that uses Both Public and Private
+  - Policy Driven
+  - Workload Diversity therefore High Reliability
