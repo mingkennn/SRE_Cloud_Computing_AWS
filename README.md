@@ -62,3 +62,14 @@ Benefits of Cloyd Computing
   - Any environment that uses Both Public and Private
   - Policy Driven
   - Workload Diversity therefore High Reliability
+
+
+Localhost
+- file.pem
+- ssh folder
+Public Cloud
+- Secure the Security Groups
+- AWS File.pem is the file shared
+- SSH Command Provided to use AWS
+AWS IAM Role
+- Middle Man Role in order to give the LocalHost an access point to the Cloud
