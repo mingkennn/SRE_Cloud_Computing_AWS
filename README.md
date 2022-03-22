@@ -6,7 +6,7 @@
 - Create Github Repo to push the markdown Doc
 - Amazon Web Services (AWS)
 
-Benefits of Cloyd Computing
+### Benefits of Cloud Computing
 - Ease of Use
   - Comes with AWS Tools
   - Able to migrate from other Servers to the Service
@@ -32,6 +32,7 @@ Benefits of Cloyd Computing
 - Cost Savings, Flexibility, Strategic Value
 ### AWS
 - Amazon Warehouse Storage
+- 84 Availability Zones with 26 Total Regions around the world
 ### AWS Global Infrastructure
 - Global & Flexible
 - Highly Available & Scalable
@@ -42,9 +43,13 @@ Benefits of Cloyd Computing
 - Allows multiple instances where each Instance can be in different Zones to allow for High Uptime
 ### What are the four Pillars of Cloud Computing
 - Ease of use
+  - Allows for quick and secure hosting of applications
 - Flexibility
+  - Allows you to pick the location of the servers online and can be switched to different regions or be active in different regions at the same time with CDN
 - Robustness
+  - Auto Scaling allows multiple copies and more servers to be added depending on the demand
 - Cost effective
+  - You only pay for what you use
 ### What is CDN
 - Content Delivery Network
 - Deploying it to a Server in England
@@ -63,8 +68,7 @@ Benefits of Cloyd Computing
   - Policy Driven
   - Workload Diversity therefore High Reliability
 
-
-Localhost
+### Localhost
 - file.pem
 - ssh folder
 Public Cloud
@@ -73,3 +77,43 @@ Public Cloud
 - SSH Command Provided to use AWS
 AWS IAM Role
 - Middle Man Role in order to give the LocalHost an access point to the Cloud
+
+### AWS VM Connection Diagram
+![image info](./image1.png)
+- File.Pem
+  - Privacy Enchanced Mail
+  - Used to Represent Keys, Certificate Requests & Chains
+- .SSH Folder
+  - Secure Socket Shell
+  - Uses port 22
+  - A network protocol that gives System Admins a secure way to access a Computer over a network
+- AWS IAM
+  - Identity and Access Management
+  - Defines a set of permissions for making AWS Service Requests
+  - Not Associated with a specific User Group
+    - Instead Assumes Roles such as IAM users, apps or AWS services such as EC2
+- EC2
+  - Elastic Compute Cloud
+  - Providing Scalable Computing Capacity
+  - Enables faster development and Deployment due to lack of need of physical hardware
+  - Able to configure security, networking, cookie management and launch virtual servers all from a dashboard
+
+
+### AWS Instance & Connecting to it 
+- Choose an EC2 Instance
+- Select the Ubuntu 18.0.4 Selection
+- Choose Default Free Tier Eligible
+- Choose Default A as the Subnet
+- Add Storage (We skip for our purposes)
+- Within the Keys and Values Tag, Type out 105_SRE_MingKen_(purpose)
+- Configure Security Group
+  - SSH = My Ip
+  - HTTP = Anywhere
+  - HTTPS = Only with SSL Certificate
+- Review Instances and Launch
+- SSH within the Keys Perm Folder
+- Connect with the SSH Command
+- Once Connected, Use these Commands in Order to get the latest updates
+  - sudo apt-get update -y
+  - sudo apt-get upgrade -y
+- You are ready to go and you can install whatever packages you want
