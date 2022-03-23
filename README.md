@@ -239,7 +239,8 @@ sudo systemctl start tomcat
   - Ensure that the Java Home Directory is correct first with the first Part of the Instalation
     - `sudo nano /etc/systemd/system/tomcat.service`
   - And Add to the Nano
-    - ```
+    - 
+  ```
 [Unit]
 Description=Tomcat 9.0 servlet container
 After=network.target
@@ -259,3 +260,42 @@ ExecStop=/opt/tomcat/latest/bin/shutdown.sh
 WantedBy=multi-user.target      
 ```
   - Connect to TomCat with your IP Address and add ":8080" to the end
+
+- What is a VPC
+  - Virtual Private Coud
+  - A virtual network dedicated to your account on the Service
+  - Private instance that is Secure and Isolated within a Public Cloud
+  - Store Data
+  - Run Code
+  - Host Websites
+- What is an Internet gateway
+  - A Horizontally scaled, redundant and highly available VPC component
+  - Allows Communicatins between your VPC and the Internet
+  - Enables the resources like EC2 Instances to connect to the internet if they have a public IPV4 or 6 Address
+- What is route tables
+  - A set of rules called rooutes that determine where network traffic from your subnet or Gateway is directed
+  - local route for communication within the VPC
+- What is a subnet
+  - A range of IP Addresses in your VPC
+  - Dividing the Network into  two or more networks
+  - Public and Private Subnets exist
+- What is NACLS
+  - Network Access Control List
+  - Optional Security Layer
+  - Acts as  Firewall for controlling traffic in and out of one more subnets
+- What is a Security Group
+  - A Virtual Firewall that controls Traffic
+  - Decides what traffic leaves and reaches the resources it is associated with
+  - Such as Our EC2 Instance where our security group we needed to add 8080 to the Ports in order to access TomCat
+- How did you secure your app on the public cloud
+  - By using Security Groups and allowing only ports we know that are Safen and Frequently Used
+  - Such as acessing TomCat a safe port we allow only 8080 to leave and reach the instance
+  - Doing this, we restrict whether traffic can enter or leave the isntacnce thereby securing
+- WHat are the outbound rules for security Group by default? and why?
+  - Default is All inbound traffic from resources that are assigned to the same security Group
+  - Allows all outbound IpV4 Traffic
+  - Allows all Outbound IPV6 Traffic if VPC has an associated IPv6 Block
+- What is the command to kill a process in Linux?
+  - Kill ProcessID
+  - SigKill ProcessID / Kill-9 ProcessID
+
