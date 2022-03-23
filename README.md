@@ -121,9 +121,9 @@ AWS IAM Role
 
 ### Linux Commands
 - How to start a Service
-  - sudo system start name_service
+  - sudo systemctl start name_service
 - How to stop a service
-  - sudo system stop name_service
+  - sudo systemctl stop name_service
 - How to check status 
   - systemctl status name_service
 - how to enable service
@@ -168,4 +168,28 @@ AWS IAM Role
   - sudo chmod +x file_name.sh
 - https://chmod-calculator.com/
 
-### How to Automate 
+### Bash Scripting - Automate processes with a script
+```bash
+#!/bin/bash
+
+# Run Updates
+sudo apt-get update -y
+
+# Run Upgrades
+sudo apt-get upgrade -y
+
+# Install NGINX
+sudo apt-get install nginx -y
+
+# Ensure its running - Start NGINX
+sudo systemctl start nginx
+
+# Enable NGINX
+sudo systemctl enable nginx
+
+```
+
+  -Change the file to exe `chmod +x provisions.sh`
+  - To run the File `sudo ./provisions.sh`
+    - The sudo within this command is really only for security
+
