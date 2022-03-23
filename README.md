@@ -166,6 +166,6 @@ AWS IAM Role
   - SUDO Chmod 400 SRE.txt
 - Make a file executable
   - sudo chmod +x file_name.sh
-- http://permissions-calculator.org/
+- https://chmod-calculator.com/
 
 ### How to Automate 
