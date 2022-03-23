@@ -117,3 +117,35 @@ AWS IAM Role
   - sudo apt-get update -y
   - sudo apt-get upgrade -y
 - You are ready to go and you can install whatever packages you want
+
+
+### Linux Commands
+- How to start a Service
+  - sudo system start name_service
+- How to stop a service
+  - sudo system stop name_service
+- How to check status 
+  - systemctl status name_service
+- how to enable service
+  - systemctl enable name_service
+- How to install a package
+  - sudo apt install package_name -y
+- How to remove a package
+  - sudo apt remove package_name -y
+- how to check all process
+  - top
+- Who am I 
+  - uname
+  - uname -a
+- Where am i?
+  - pwd
+- Create a directory
+  - mkdir dir_name
+- How to check current files and directory
+  - LS
+  - LS -a
+- How to create a File
+  - touch name_file
+  - nano name_file
+  - cat > filename
+  - cat filename
