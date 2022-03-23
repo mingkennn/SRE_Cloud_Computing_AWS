@@ -147,5 +147,10 @@ AWS IAM Role
 - How to create a File
   - touch name_file
   - nano name_file
+- How to check content of a file without going inside the file
   - cat > filename
   - cat filename
+- How to move a file to another folder
+  - mv file_name  ~/folder
+- How to move back
+  - cd ..
