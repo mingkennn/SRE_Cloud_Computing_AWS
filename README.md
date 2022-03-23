@@ -154,3 +154,18 @@ AWS IAM Role
   - mv file_name  ~/folder
 - How to move back
   - cd ..
+- How to delete folder 
+  - rm -rf folder_name
+
+
+### File Permissions
+- How to check file permissions
+  - ll
+- Change File permission
+  - CHMOD require_permission file_name
+  - SUDO Chmod 400 SRE.txt
+- Make a file executable
+  - sudo chmod +x file_name.sh
+- http://permissions-calculator.org/
+
+### How to Automate 
