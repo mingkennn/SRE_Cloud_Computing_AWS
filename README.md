@@ -186,10 +186,76 @@ sudo systemctl start nginx
 
 # Enable NGINX
 sudo systemctl enable nginx
-
 ```
 
-  -Change the file to exe `chmod +x provisions.sh`
+  - Change the file to exe `chmod +x provisions.sh`
   - To run the File `sudo ./provisions.sh`
     - The sudo within this command is really only for security
 
+### TomCat Installation
+```bash
+#!/bin/bash
+
+#TomCat Installation
+
+#1 Install Java JDK Environment
+sudo apt install default-jdk
+
+#2 Setting up a TomCat User Profile
+sudo useradd -r -m -U -d /opt/tomcat -s /bin/false tomcat
+
+#3 DownLoad the TomCat Package using Curl
+sudo apt install curl
+curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.60/bin/apache-tomcat-9.0.60.tar.gz
+
+#4 Installing Tomcat
+sudo mkdir /opt/tomcat
+tar -xf apache-tomcat-9.0.60.tar.gz
+sudo mv apache-tomcat-9.0.60 /opt/tomcat/
+sudo ln -s /opt/tomcat/apache-tomcat-9.0.60 /opt/tomcat/latest
+
+#5  Provide the TomCat User Profile Access to the Directory
+sudo chown -R tomcat: /opt/tomcat/
+
+#6 CHMOD to Add the executables within the Bin Directory
+sudo sh -c 'chmod +x /opt/tomcat/latest/bin/*.sh'
+```
+
+- 2nd Part but not a script
+```
+#7 After ensuring that the Java Installation is Correct, reload the Daemon
+sudo systemctl daemon-reload
+
+#8 Allow Port 8080 through the firewall to access Tomcat
+sudo ufw allow 8080/tcp
+
+#9 Start Tomcat
+sudo systemctl start tomcat
+```
+
+
+  - After adding this script use this command on the file `chmod +x tomcat.sh` and `chmod +x tomcat2.sh`
+  - Run the file with `sudo ./tomcat.sh`
+  - Ensure that the Java Home Directory is correct first with the first Part of the Instalation
+    - `sudo nano /etc/systemd/system/tomcat.service`
+  - And Add to the Nano
+    - ```
+[Unit]
+Description=Tomcat 9.0 servlet container
+After=network.target
+[Service]
+Type=forking
+User=tomcat
+Group=tomcat
+Environment="JAVA_HOME=/usr/lib/jvm/default-java"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+Environment="CATALINA_BASE=/opt/tomcat/latest"
+Environment="CATALINA_HOME=/opt/tomcat/latest"
+Environment="CATALINA_PID=/opt/tomcat/latest/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+ExecStart=/opt/tomcat/latest/bin/startup.sh
+ExecStop=/opt/tomcat/latest/bin/shutdown.sh
+[Install]
+WantedBy=multi-user.target      
+```
+  - Connect to TomCat with your IP Address and add ":8080" to the end
