@@ -272,9 +272,13 @@ WantedBy=multi-user.target
   - A Horizontally scaled, redundant and highly available VPC component
   - Allows Communicatins between your VPC and the Internet
   - Enables the resources like EC2 Instances to connect to the internet if they have a public IPV4 or 6 Address
+
+![image info](./route.jpg)
 - What is route tables
   - A set of rules called rooutes that determine where network traffic from your subnet or Gateway is directed
   - local route for communication within the VPC
+
+![image info](./subnet.png)
 - What is a subnet
   - A range of IP Addresses in your VPC
   - Dividing the Network into  two or more networks
@@ -298,4 +302,57 @@ WantedBy=multi-user.target
 - What is the command to kill a process in Linux?
   - Kill ProcessID
   - SigKill ProcessID / Kill-9 ProcessID
+
+
+
+### Monolith - N-Tier - 2Tier & Microservices Architecture
+![image info](./cicd.png)
+- CICD Pipelines
+  - Continous Intergration
+    - Developers Merge/Commit Code to Main Branch a few times a day
+    - These are fully automated Builds that are automatically tested
+    - Avoids integration hell
+  - Continous Delivery
+    - A Sustainable way of releasing your changes publicly
+    - Deployment is completed manually
+    - Extended further upon Continous Integration
+  - Continous Deployment
+    - No Human intervention is Deployment
+    - Only a failed test will prevent Deployment
+    - One Step further than continous Delivery
+
+![image info](./monolith.jpg)
+- Microservices
+  - Services that can be added to the Code On demand
+
+![image info](./jenkins.png)
+- Jenkins
+  - A Pipeline interface to allow simpler planning
+
+![image info](./docker.png)
+- Docker
+  - Software that allows us to containerise apps and code
+
+### SDLC
+Software Development Life Cycle
+- Planning
+  - An Idea
+- Designing
+  - Writing out how the product will look
+  - What the product needs
+- Development
+  - An environment that works for all of us regardless of OS
+- Testing
+  - Nothing goes to production without testing
+  - Must pass in order to go to the next stage
+  - Can get Feedback
+- Staging
+  - Holding Area before the code gets deployed
+
+### Github
+- One person reviewing is always the best
+- Someone who is more knowledgeable should merge
+- Git Enter gives all the available command
+- If you delete the .git you need to reconnect to the github remote before pushing the code back
+
 
