@@ -356,3 +356,28 @@ Software Development Life Cycle
 - If you delete the .git you need to reconnect to the github remote before pushing the code back
 
 
+### Docker
+![image info](./architecture.svg)
+```
+docker cp "File Location" "Second File Location"
+```
+- Docker Command from this Location to another Location
+```
+docker ps
+```
+- Show Docker Services
+```
+docker exec -it "Container ID"
+```
+- Enter the said Container using their ID
+```
+docker commit "Container ID" "Repo with Version Tag"
+```
+- Docker commit to the Repo with the Version
+```
+docker run -d -p 80:80 mingkennn/sparta_sre:v1
+```
+- Docker download image if dont already have and run the image on Port 80
+
+
+
