@@ -358,10 +358,38 @@ Software Development Life Cycle
 
 ### Docker
 ![image info](./architecture.svg)
+
+`docker images:` Will present the images available
+
+`docker ps`: To check the containers running
+
+`docker ps -a`: To check every container running including hidden files
+
+`docker pull`: to pull the image from docker hub
+
+`docker run` : to run the image live directly from dockerhub
+
+`docker exec -it [container id] bash`: to access the running container
+
+`docker stop`: stops a running container
+
+`docker kill`: kills container by stopping execution. stop gives time to shut down gracefully
+
+`docker commit [container id][username/imagename]`: creates new image of an edited container on local system
+
+`docker rm [container id]`:removes container
+
+`docker history [image name]`: to view history
+
+`docker image rm [image name]`: deletes image
+
+```docker run -d -p localhost-port:container-port```
+- Port mapping in our containers with localhost
+
 ```
 docker cp "File Location" "Second File Location"
-```
-- Docker Command from this Location to another Location
+``` 
+-  Docker Command from this Location to another Location
 ```
 docker ps
 ```
