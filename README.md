@@ -364,6 +364,8 @@ Software Development Life Cycle
 ![image info](./dockerVol.jpg)
 - When compared to a VM, we have Unified Memory and only have the dependencies needed to run the Application rather than requiring an OS
 
+##### Simple Docker Commands
+
 `docker images:` Present the downloaded Images Available
 
 `docker ps`: Current Running Containers
@@ -372,19 +374,19 @@ Software Development Life Cycle
 
 `docker pull`: Pull the image from Online Hub
 
-`docker exec -it [container id] bash`: To Access the Specified Container ID
-
 `docker stop`: Stops the Currently Running Container with a Grace Time
 
 `docker kill`: Kills Container Immediately 
-
-`docker commit [container id][username/imagename]`: Creates a new Image of a Container running on the Local System on the online Repo
 
 `docker rm [container id]`:Removes Specified Container
 
 `docker history [image name]`: View History
 
 `docker image rm [image name]`: Delete Specified Image
+
+##### Docker Hub Commands
+
+`docker commit [container id][username/imagename]`: Creates a new Image of a Container running on the Local System on the online Repo
 
 `docker exec -it "Container ID`: Enter the Specified Container
 
