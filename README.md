@@ -360,6 +360,8 @@ Software Development Life Cycle
 ![image info](./architecture.svg)
 - An Open Source Containerization platform.
 - Allows Developers to package applicatins into Containers.
+
+![image info](./dockerVol.jpg)
 - When compared to a VM, we have Unified Memory and only have the dependencies needed to run the Application rather than requiring an OS
 
 `docker images:` Present the downloaded Images Available
@@ -369,8 +371,6 @@ Software Development Life Cycle
 `docker ps -a`: To check every container running including hidden files
 
 `docker pull`: Pull the image from Online Hub
-
-`docker run` : To Run the image live directly from dockerhub
 
 `docker exec -it [container id] bash`: To Access the Specified Container ID
 
@@ -397,6 +397,7 @@ Software Development Life Cycle
 `docker run -d -p 80:80 mingkennn/sparta_sre:v1` : Download and run the Image Version v1 at Port 80
 
 ##### Docker Volumes
+![image info](./volumes.png)
 - Directories and Files that exist on the host file system outside of the Docker Container
 - Used to Persist and share Data between Containers
 - Supports Mounting of one more data volumes from the Host OS to the Container
