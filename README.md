@@ -405,6 +405,22 @@ Software Development Life Cycle
 - Supports Mounting of one more data volumes from the Host OS to the Container
 
 
+### Docker File to automate the process of building customised Image - Building a Microservice
+- Crio - Rocket - Docker
+- Automate image building of our customised nginx image
+  - Create a `Dockerfile` in the same location where our index.html is
+  - Decide which base image to use for your image
+
+
+### Docker Instance with ASP.Net App
+- Firstly Create the DockerFile with the required details
+- Add the .dockerignore File to make the file smaller
+- Secondly then build the image using the DockerFile which automated the process
+- Then Create a Repo Online on Docker Hub
+- Ensure that the only container running currently is the ASP.Net App container
+- Push to the Repo with the `latest` tag
+
+
 
 
 
