@@ -412,13 +412,71 @@ Software Development Life Cycle
   - Decide which base image to use for your image
 
 
-### Docker Instance with ASP.Net App
-- Firstly Create the DockerFile with the required details
+### Docker Instance with ASP.Net App Steps
+- Create a new DockerFile (no extension) with the Code below
+```
+# syntax=docker/dockerfile:1
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /app
+
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY ../engine/examples ./ #change to . ./ if an error happens first
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "aspnetapp.dll"] #Change according to the Solution of the File
+
+#Essentially builds an image that can run the ASP .NET App within a Container
+``` 
+
 - Add the .dockerignore File to make the file smaller
+```
+# comment
+*/temp*
+*/*/temp*
+temp?
+bin/
+obj/
+
+#This reduces the file size of the image therefore making it more efficient in general
+```
+
 - Secondly then build the image using the DockerFile which automated the process
+```
+#Run within Bash
+#Builds an image according to the DockerFile script created earlier in step 1
+
+docker build -t <user>/<reponame>
+```
+
 - Then Create a Repo Online on Docker Hub
+![image info](./dockerHub.png)
+
 - Ensure that the only container running currently is the ASP.Net App container
+```
+#To ensure that this is the case
+#Use the Command below
+
+docker ps
+
+#The code above checks the current services running
+#If there are any other containers running beside the one you want, stop them
+```
+
 - Push to the Repo with the `latest` tag
+`docker push <username>/<repo>:latest`
+
+
+### Docker Compose
+- Contains a YAML File
+- This file acts as a way to combine 2 microservices to act as a single Service
 
 
 
