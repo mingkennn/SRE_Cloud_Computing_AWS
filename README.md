@@ -358,54 +358,52 @@ Software Development Life Cycle
 
 ### Docker
 ![image info](./architecture.svg)
+- An Open Source Containerization platform.
+- Allows Developers to package applicatins into Containers.
+- When compared to a VM, we have Unified Memory and only have the dependencies needed to run the Application rather than requiring an OS
 
-`docker images:` Will present the images available
+`docker images:` Present the downloaded Images Available
 
-`docker ps`: To check the containers running
+`docker ps`: Current Running Containers
 
 `docker ps -a`: To check every container running including hidden files
 
-`docker pull`: to pull the image from docker hub
+`docker pull`: Pull the image from Online Hub
 
-`docker run` : to run the image live directly from dockerhub
+`docker run` : To Run the image live directly from dockerhub
 
-`docker exec -it [container id] bash`: to access the running container
+`docker exec -it [container id] bash`: To Access the Specified Container ID
 
-`docker stop`: stops a running container
+`docker stop`: Stops the Currently Running Container with a Grace Time
 
-`docker kill`: kills container by stopping execution. stop gives time to shut down gracefully
+`docker kill`: Kills Container Immediately 
 
-`docker commit [container id][username/imagename]`: creates new image of an edited container on local system
+`docker commit [container id][username/imagename]`: Creates a new Image of a Container running on the Local System on the online Repo
 
-`docker rm [container id]`:removes container
+`docker rm [container id]`:Removes Specified Container
 
-`docker history [image name]`: to view history
+`docker history [image name]`: View History
 
-`docker image rm [image name]`: deletes image
+`docker image rm [image name]`: Delete Specified Image
 
-```docker run -d -p localhost-port:container-port```
-- Port mapping in our containers with localhost
+`docker exec -it "Container ID`: Enter the Specified Container
 
-```
-docker cp "File Location" "Second File Location"
-``` 
--  Docker Command from this Location to another Location
-```
-docker ps
-```
-- Show Docker Services
-```
-docker exec -it "Container ID"
-```
-- Enter the said Container using their ID
-```
-docker commit "Container ID" "Repo with Version Tag"
-```
-- Docker commit to the Repo with the Version
-```
-docker run -d -p 80:80 mingkennn/sparta_sre:v1
-```
-- Docker download image if dont already have and run the image on Port 80
+`docker run -d -p localhost-port:container-port` : Port mapping in our containers with localhost
+
+`docker cp "File Location" "Second File Location"` : Docker Command from this Location to another Location
+
+`docker commit "Container ID" "Repo with Version Tag"`: Docker commit to the Repo with the Version
+
+`docker run -d -p 80:80 mingkennn/sparta_sre:v1` : Download and run the Image Version v1 at Port 80
+
+##### Docker Volumes
+- Directories and Files that exist on the host file system outside of the Docker Container
+- Used to Persist and share Data between Containers
+- Supports Mounting of one more data volumes from the Host OS to the Container
+
+
+
+
 
 
 
