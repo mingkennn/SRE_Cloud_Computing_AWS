@@ -530,6 +530,9 @@ spec:
 - Run the script with the Line `kubectl create -f <filename>.yml`
 
 
+### Kubernetes
+![image info](./kube.png)
+
 ### Kubernetes Commands
 ```
 # list all commands
@@ -567,7 +570,7 @@ kubectil create -f <name>.yml
 ### Kubernetes YAML
 Creating a deployment for NGINX with 3 Pods/Containers
 
-```
+```yml
 apiVersion: apps/v1 # which api to use for deployment
 kind: Deployment # what kind of service/object you are creating
 
@@ -598,7 +601,7 @@ spec:
         - containerPort: 80
 ```
 
-```
+```yml
 ---
 apiVersion: v1
 kind: Service
