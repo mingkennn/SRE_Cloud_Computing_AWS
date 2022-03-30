@@ -478,6 +478,152 @@ docker ps
 - Contains a YAML File
 - This file acts as a way to combine 2 microservices to act as a single Service
 
+### YAML Files
+- Format is either "file.yml" or "file.ymal"
+- Can be utilised with K8, Docker-Compose, Ansible, Cloud-Formattion
+- To codify anything and everything in order to automate processes
+```
+#Create a Deployment for NGINX with 3 Pods/Containers
+
+--- 
+#Create a Service - Cluster-IP, NodePort - LoadBalancer
+```
+- Create a file for nginx_deployment.yml
+- Create file for Nginx_svc.yml
+- Localhost:Port
+
+- Example
+```yml
+# YML is case sensitive therefore indentation is important
+# Use Spaces and not tabs
+
+apiVersion: apps/V1 # Which api you want to use for Deployment
+kind: Deployment # What kind of service/object you want to create
+
+# What would you like to call it is - Names the Service/Object
+metadata:
+  name: nginx-deployment # Naming the Deployment
+
+spec:
+  selector:
+    matchLabels:
+      app: nginx # look for this Label to match with K8 Service
+
+  # Lets create a replica set of this with 2 Instances/Pods
+  replicas: 3
+
+  # Template to use it's label for K8 Service to launch in the Browser
+  template:
+    metadata:
+      labels:
+        app: nginx # This Label connects to the service or any other K8 Components
+
+    # Lets define the container spec
+    spec:
+      containers:
+      - name: ngiinx
+        image: ahkshan/eng89automatednginx:latest
+        ports:
+        - containerPort: 80
+```
+
+- Run the script with the Line `kubectl create -f <filename>.yml`
+
+
+### Kubernetes Commands
+```
+# list all commands
+kubectl
+
+# get the kubernetes services 
+kubectl get service
+kubectl get svc
+
+# get service created by cluster
+kubectl get svc nginx_svc 
+kubectl get deploy nginx_deploy
+
+# list all the pods (running and not running)
+kubectl get pods
+
+# get more information on the pods
+# describe can be used for other svc and more
+kubectl describe pod pod_name
+kubectl describe pod podID
+
+# name of deployement, pod, replica set
+kubectl get service_name
+
+# Deletion
+kubectl delete deploy <name>
+
+# Editing Deployment
+kubectl delete edit deploy <name?
+
+# Creating with a specific script
+kubectil create -f <name>.yml
+```
+
+### Kubernetes YAML
+Creating a deployment for NGINX with 3 Pods/Containers
+
+```
+apiVersion: apps/v1 # which api to use for deployment
+kind: Deployment # what kind of service/object you are creating
+
+# what would you like to call it
+metadata:
+  name: nginx-deployment # naming the deployment
+
+# specification
+spec:
+  selector:
+    matchLabels:
+      app: nginx # look for this label to match with K8 service
+  # Lets create a replica set with 3 instances/pods
+  replicas: 3
+
+  # template to use its label for K8 service to launch in the browser
+  template:
+    metadata:
+      labels:
+        app: nginx # This label connects to the service or any other K8 component
+
+    # Define the container specs
+    spec:
+      containers:
+      - name: nginx
+        image: shakilrahman/105_sre_nginx:latest
+        ports:
+        - containerPort: 80
+```
+
+```
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-svc
+  namespace: default
+
+# Specification to include ports Selector to connect to deployment
+spec:
+  ports:
+  - nodePort: 30442 # range 30000 - 32768
+    port: 80 # port to use on localhost
+    protocol: TCP
+    targetPort: 80 # target our app uses 
+
+# Define the selector and label to connect to nginx deployment
+  selector:
+    app: nginx # this label connects this service to deployement
+
+  # Creating LoadBalancer type of deployement
+  type: LoadBalancer
+```
+
+
 
 
 
